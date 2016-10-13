@@ -1,6 +1,6 @@
 {
   "name": "think-socket-uws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ThinkJS 2.x Socket.io adapter, thats implement uWebsockets",
   "directories": {
     "test": "test"
