@@ -1,4 +1,11 @@
-# think-socket-uws
+# ThinkJS Socket.io uWebSocket
+
+[![NPM version](https://img.shields.io/npm/v/thinkjs.svg?style=flat-square)](http://badge.fury.io/js/think-socket-uws)
+[![travis-ci](https://img.shields.io/travis/75team/thinkjs.svg?style=flat-square)](https://travis-ci.org/im-kulikov/think-socket-uws)
+[![Coverage Status](https://img.shields.io/coveralls/75team/thinkjs.svg?style=flat-square)](https://coveralls.io/github/im-kulikov/think-socket-uws)
+[![Dependency Status](https://david-dm.org/75team/thinkjs.svg)](https://david-dm.org/im-kulikov/think-socket-uws)
+
+-----
 
 ThinkJS 2.x [Socket.io](https://github.com/socketio/socket.io) adapter, that's implement [uWebsockets](https://github.com/uWebSockets/uWebSockets)
 
