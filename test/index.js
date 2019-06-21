@@ -148,7 +148,7 @@ describe('think=socket-uws', function(){
         });
     });
     it('run, uws', function(done){
-        var rUWS = require('uws');
+        var rUWS = require('uWebsockets.js');
         muk(think, 'npm', function(){
             return function(ser){
                 assert.equal(server, ser);
@@ -158,10 +158,7 @@ describe('think=socket-uws', function(){
                         sockets: []
                     },
                     on: function(type){
-                        assert.deepEqual(this.engine.ws, new rUWS.Server({
-                            noServer: true,
-                            perMessageDeflate: false
-                        }));
+                        assert.deepEqual(this.engine.ws, rUWS.App());
                         assert.equal(type, 'connection');
                         assert.equal(think.isFunction(sUWS.io.on), true);
                         muk.restore();

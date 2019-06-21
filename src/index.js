@@ -1,7 +1,7 @@
 'use strict';
 
 let Base = think.adapter('websocket', 'base');
-let uws = require('uws');
+let uws = require('uWebSockets.js');
 
 /**
  * Socket.io uWebsockets adapter
@@ -14,21 +14,13 @@ export default class extends Base {
     async run(){
         let socketio = await think.npm('socket.io');
         let io = socketio(this.server);
-        let uwsConfig = {
-            noServer: true,
-            perMessageDeflate: false
-        };
         //Sets the path v under which engine.io and the static files will be served. Defaults to /socket.io.
         if(this.config.path){
             io.path(this.config.path);
         }
-        //Sets uWebsockets options, see there - https://github.com/uWebSockets/uWebSockets#nodejs
-        if(this.config.uws) {
-            uwsConfig = think.extend({}, uwsConfig, this.config.uws)
-        }
         this.io = io;
         //set io engine.ws, see there - https://github.com/uWebSockets/uWebSockets#socketio
-        io.engine.ws = new uws.Server(uwsConfig);
+        io.engine.ws = uws.App();
         //set io adapter, must be a function
         //http://socket.io/docs/using-multiple-nodes/
         if(this.config.adp){
